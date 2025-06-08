@@ -1,0 +1,67 @@
+cd ~/Desktop/CPSC/c++/"Expense Tracker"/build
+cmake --build .
+./ExpenseTracker
+
+
+Expense Tracker
+
+
+PAGE:
+1. Add Expense
+    Account (overall) // Object
+    Account > BankAccount (invidual account) // inheritance
+
+2. View All Expenses
+    Account (overall)
+    Account > BankAccount (invidual account) 
+
+
+3. Monthly Summary
+    Account (overall)
+    Account > BankAccount (invidual account)
+
+4. Export to CSV
+    Account (overall)
+    Account > BankAccount (invidual account)
+
+5. Exit
+
+
+
+FRONT END:
+1. Login Window
+    Username
+    Password
+
+2. Main Dashboard
+    Add Expense
+    View Expense
+    View Summary
+
+3. Add Expense
+    Amount
+    Category
+    Data
+    Description
+
+4. Table of all expense with search/filter
+
+5. Show category breakdown, total, chart
+
+note:
+- 
+    
+
+
+
+
+
+BACK END:
+1. Check if username and password match 
+2. Select account
+3. 
+
+note: 
+- use txt files or cvs to save and access
+- event handling and exception
+- encrpytion if time

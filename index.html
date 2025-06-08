@@ -1,0 +1,15 @@
+<div>
+    <h1>My Expenses</h1>
+    <div id="loading">Loading...</div>
+    <pre id="expenses"></pre>
+  </div>
+  
+  <script>
+    const { ipcRenderer } = require('electron');
+  
+    ipcRenderer.on('cpp-data', (event, data) => {
+      document.getElementById('loading').style.display = 'none';  // hide loading message
+      document.getElementById('expenses').textContent = data;      // display C++ output
+    });
+  </script>
+  
