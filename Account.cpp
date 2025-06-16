@@ -23,13 +23,13 @@ class Account {
         string password; 
 
     public:
-        Account() { // default constructor 
-
+        Account(string name, string password) { // default constructor 
+            this -> nane = name;
+            this -> password = password;
         }
 
-        Account(string firstName, string lastName, string address, string city, string province, string zipcode, string password) {
-            this -> firstName = firstName;
-            this -> lastName = lastName;
+        Account(string name, string address, string city, string province, string zipcode, string password) {
+            this -> name = name;
             this -> address = address;
             this -> city = city;
             this -> province = province;
