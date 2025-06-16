@@ -42,6 +42,9 @@ int main() {
 void option(int num) {
     switch(num) {
         case 1:
+            Account a1 = new Account();
+            
+        case 2:
             string username;
             string password;
             
@@ -52,29 +55,21 @@ void option(int num) {
             cout << "Password: ";
             cin >> password;
 
-            Account a1 = new Account();
+            Account a2 = new Account(username, password);
 
-            
-
-        
-            
-
-            
-            
-        case 2:
-            string name;
-
-            cout << "Enter first and last name: ";
-            cin >> name;
-            
-            if (name.indexOf(" ") == -1) {
-                cout << "Enter space between first and last name" << endl;
+            if (username != a2.email && password != a2.password) {
+                cout << "Account Not Found";
+            }
+            else {
+                cout << "Hi " << a1.name << endl << "Account has been created;
             }
 
-            string
         
-
         case 3:
+            
+
+        
+        
 
         case 4:
 
@@ -82,10 +77,12 @@ void option(int num) {
 
         case 6:
 
-
         case 7:
 
-        case 8: 
+
+        case 8:
+
+        case 9: 
             break;
 
 
@@ -97,14 +94,15 @@ void option(int num) {
 
 void menu() {
     cout << "=== Expense Tracker ===" << endl;
-    cout << "1. Add Chequing Account" << endl;
-    cout << "2. Add Saving Account" << endl;
-    cout << "3. Add Business Account" << endl;
-    cout << "4. Add Expense" << endl;
-    cout << "5. View All Expenses" << endl;
-    cout << "6. Monthly Expense" << endl;
-    cout << "7. Export to CVS" << endl;
-    cout << "8. Exit" << endl;
+    cout << "1. Create Account" << endl;
+    cout << "2. Add Chequing Account" << endl;
+    cout << "3. Add Saving Account" << endl;
+    cout << "4. Add Business Account" << endl;
+    cout << "5. Add Expense" << endl;
+    cout << "6. View All Expenses" << endl;
+    cout << "7. Monthly Expense" << endl;
+    cout << "8. Export to CVS" << endl;
+    cout << "9. Exit" << endl;
     cout << "-----------------------" << endl;
     cout << "Enter your choice: ";
 }
