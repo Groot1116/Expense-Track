@@ -27,19 +27,14 @@ void menu();
 
 int main() {
 
-    cout << "working..." << endl;
-
     int ans;
     
-    do {
-        
-
-        
+    do {   
         menu();
         cin >> ans;
         option(ans);
 
-    } while (ans != 5); 
+    } while (ans != 8); 
      
 }
 
@@ -47,12 +42,52 @@ int main() {
 void option(int num) {
     switch(num) {
         case 1:
+            string username;
+            string password;
+            
+            cout << "Username: ";
+            cin >> username;
+            cout << \n;
 
+            cout << "Password: ";
+            cin >> password;
+
+            Account a1 = new Account();
+
+            
+
+        
+            
+
+            
+            
         case 2:
+            string name;
+
+            cout << "Enter first and last name: ";
+            cin >> name;
+            
+            if (name.indexOf(" ") == -1) {
+                cout << "Enter space between first and last name" << endl;
+            }
+
+            string
+        
 
         case 3:
 
         case 4:
+
+        case 5:
+
+        case 6:
+
+
+        case 7:
+
+        case 8: 
+            break;
+
 
         default: 
             cout << "Please Select the option" << endl;
@@ -62,11 +97,14 @@ void option(int num) {
 
 void menu() {
     cout << "=== Expense Tracker ===" << endl;
-    cout << "1. Add Expense" << endl;
-    cout << "2. View All Expenses" << endl;
-    cout << "3. Monthly Expense" << endl;
-    cout << "4. Export to CVS" << endl;
-    cout << "5. Exit" << endl;
+    cout << "1. Add Chequing Account" << endl;
+    cout << "2. Add Saving Account" << endl;
+    cout << "3. Add Business Account" << endl;
+    cout << "4. Add Expense" << endl;
+    cout << "5. View All Expenses" << endl;
+    cout << "6. Monthly Expense" << endl;
+    cout << "7. Export to CVS" << endl;
+    cout << "8. Exit" << endl;
     cout << "-----------------------" << endl;
     cout << "Enter your choice: ";
 }
