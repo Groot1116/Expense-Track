@@ -15,6 +15,7 @@ class Saving: public Account {
         const double feeAdult = 20.99;
         const double feeSenior = 10.99;
         const int numberOfTransaction = 3;
+        double balance = 0;
 
 
 
@@ -24,4 +25,7 @@ class Saving: public Account {
             int fee = (age >= 65) ? feeSenior : feeAdult;
 
         }
+        void add(int amount) {
+                    balance += ammount;
+                }
 };
