@@ -11,8 +11,8 @@ using std::string;
 class Account {
     private:
         int ID;
-        string firstName;
-        string lastName;
+        string name;
+        string email;
 
         string address;
         string city;
@@ -28,8 +28,9 @@ class Account {
             this -> password = password;
         }
 
-        Account(string name, string address, string city, string province, string zipcode, string password) {
+        Account(string name, string email, string address, string city, string province, string zipcode, string password) {
             this -> name = name;
+            this -> email = email;
             this -> address = address;
             this -> city = city;
             this -> province = province;
@@ -38,12 +39,12 @@ class Account {
         }
 
 
-        string getFirstName(string firstName) {
-            return this -> firstName = firstName;
+        string getName(string name) {
+            return this -> name = name;
         }
 
-        string getLastName(string lastName) {
-            return this -> lastName = lastName;
+        string getEmail(string email) {
+            return this -> email = email;
         }
 
         string getAddress(string adress) {
