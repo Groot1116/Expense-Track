@@ -153,29 +153,7 @@ void option(int num) {
 
                 
         case 6:
-            string opt;
-            double amount;
-            cout << "Choose the account: ";
-            cin >> opt;
-
-            cout << "Choose amount: ";
-            cin >> amount;
-
-            if (opt == "chequing") {
-                cout << "balance: " << ch.balance;
-            }
-
-            else if (opt == "saving") {
-                cout << "balance: " << sv.balance;
-            }
-
-            else if (opt == "business) {
-                cout << "balance: " << bs.balance;
-            }
-
-            else {
-                cout << "please select valid account" << endl;
-            }
+        
 
         case 7:
 
