@@ -1,126 +1,53 @@
-package Frontend;
+package com.example.myapplication;
 
-import java.time.LocalDate;
-import java.time.Month;
+import android.accounts.Account;
+import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import android.view.View;
+import android.util.Log; // to test where error is like println or cout
+import android.widget.Button;
+import android.widget.EditText;
 
 
-public class Account {
-	private final double interest = 1/100;
-	private final double adultFee = 20.99;
-	private final double seniorFee = 10.99;
-	
-	private String name;
-	private String email;
-	private int yearOfBirth;
-	private int monthOfBirth;
-	private int dayOfBirth;
-	private int age;
-	private String address;
-	private String city;
-	private String province;
-	private String zipcode;
-	private String username;
-	private String password;
-	
-	
+public class MainActivity extends AppCompatActivity {
 
-		
-		
-		
-	public Account(String name, String email, int yearOfBirth, int monthOfBirth, int dayOfBirth, String address, String city, String province, String zipcode, String password) {
-		this.name = name;
-		this.email = email;
-		this.yearOfBirth = yearOfBirth;
-		this.monthOfBirth = monthOfBirth;
-		this.dayOfBirth = dayOfBirth;
-		age = convertAge(yearOfBirth, monthOfBirth, dayOfBirth);
-		this.address = address;
-		this.city = city;
-		this.province = province;
-		this.zipcode = zipcode;
-		username = email;
-		this.password = password;
-		
-	}
-	
-	public Account() {
-		this.name = name;
-		this.email = email;
-		this.yearOfBirth = yearOfBirth;
-		this.monthOfBirth = monthOfBirth;
-		this.dayOfBirth = dayOfBirth;
-		age = convertAge(yearOfBirth, monthOfBirth, dayOfBirth);
-		this.address = address;
-		this.city = city;
-		this.province = province;
-		this.zipcode = zipcode;
-		username = email;
-		this.password = password;
-	}
-	
-	
-	
-	public int convertAge(int yearOfBirth, int monthOfBirth, int dayOfBirth) {
-		int oldestHuman = 122;
-		LocalDate date = LocalDate.now();
-		
-		if (date.lengthOfMonth() < monthOfBirth || date.lengthOfMonth() < dayOfBirth) {
-			System.out.println("Date Does Not Exist");
-			return -1;
-		}
-		
-		int year = date.getYear();
-		int month = date.getMonthValue();
-		int day = date.getDayOfMonth();
-		int sumDay = 0;
-		
-		for (Month months : Month.values() ) {
-			LocalDate birthYear = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
-            sumDay += birthYear.lengthOfMonth();
-		}
-		
-		
-		for (int i = yearOfBirth + 1; year >= i; i++) {
-			for (Month months : Month.values() ) {
-	            LocalDate dates = LocalDate.of(yearOfBirth, month, 1);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
-				if (dates.getYear() == year && dates.getMonthValue() == month && dates.getDayOfMonth() == day) {
-					break;
-				}
-	            sumDay += dates.lengthOfMonth();
-			}
-		}
-		
-		int age = sumDay / 365;
-		
-		if (age <= 0) {
-			System.out.println("You are a sperm");
-			return -1;
-		}
-		
-		else if (age > 122) System.out.println("You are old and stinky");
-			return -1;
-		}
-	
-		return age;
-	}
 
-	
-	public String getUsername() {
-		return email;
-		
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	
-	
-	public int getAge() {
-		return age;
-	}
-	
-	public double getFee() {
-		return (getAge() >= 65) ? seniorFee : adultFee;
-	}
+    }
+
+    public void toggle(View v) {
+        v.setEnabled(false);
+        Button b = (Button) v; // type casting View into Button
+        b.setText("Disabled");
+        Log.d("e", "where is error"); // put where you want to find erro
+
+    }
+
+
+    public void check(View v) {
+        EditText passField1 = (EditText) findViewById(R.id.Email);
+        String username = String.valueOf(passField1);
+
+        EditText passField2 = (EditText) findViewById(R.id.Password);
+        String password = String.valueOf(passField1);
+
+        Account a1 = new Account(username, password);
+
+    }
+
 }
