@@ -1,6 +1,5 @@
 package com.example.myapplication;
-
-import android.accounts.Account;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -15,7 +14,6 @@ import android.widget.EditText;
 
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,27 +25,32 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+    }
+    public void button(View v) {
+        if (R.id.login == v.getId()) {
+            Intent login = new Intent(MainActivity.this, login.class);
+            startActivity(login);
+        }
+        else {
+            Intent register = new Intent(MainActivity.this, login.class);
+            startActivity(register);
+        }
+
 
     }
 
-    public void toggle(View v) {
+
+
+
+
+    public void toggle1(View v) {
         v.setEnabled(false);
         Button b = (Button) v; // type casting View into Button
         b.setText("Disabled");
         Log.d("e", "where is error"); // put where you want to find erro
-
     }
 
 
-    public void check(View v) {
-        EditText passField1 = (EditText) findViewById(R.id.Email);
-        String username = String.valueOf(passField1);
 
-        EditText passField2 = (EditText) findViewById(R.id.Password);
-        String password = String.valueOf(passField1);
-
-        Account a1 = new Account(username, password);
-
-    }
 
 }
