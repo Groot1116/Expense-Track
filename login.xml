@@ -14,9 +14,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/Username"
-            android:labelFor="@+id/Username"
-            android:autofillHints="Username"
+            android:id="@+id/username"
+            android:labelFor="@+id/username"
+            android:autofillHints="username"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:ems="10"
@@ -30,7 +30,7 @@
             tools:text="username" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Password"
+            android:id="@+id/password"
             android:layout_width="250dp"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +43,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/ForgotPassword"
+            android:id="@+id/forgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
