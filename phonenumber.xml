@@ -16,9 +16,9 @@
         app:layout_constraintVertical_bias="0.5">
 
         <EditText
-            android:id="@+id/Country"
-            android:labelFor="@id/Country"
-            android:autofillHints="Country"
+            android:id="@+id/country"
+            android:labelFor="@id/country"
+            android:autofillHints="country"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:ems="10"
@@ -31,7 +31,7 @@
             tools:text="Country" />
 
         <EditText
-            android:id="@+id/Phone"
+            android:id="@+id/phonenumber"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:autofillHints="Phone"
