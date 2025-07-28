@@ -14,6 +14,24 @@ public class register extends AppCompatActivity {
     EditText name = findViewById(R.id.name);
     EditText email = findViewById(R.id.email);
 
+    private void checkName() {
+        String input = name.getText().toString().trim();
+        if (input.isEmpty()) {
+            Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Name OK", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void checkEmail() {
+        String input = email.getText().toString().trim();
+        if (!input.contains("@") || !input.contains(".")) {
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Email OK", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
